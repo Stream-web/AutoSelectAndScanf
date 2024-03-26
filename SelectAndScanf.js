@@ -10,6 +10,14 @@ var inputBoxes = document.querySelectorAll('input[type="text"], input[type="numb
 inputBoxes.forEach(function(inputBox) {
     var randomNumber = generateRandomNumber(1, 100);
     inputBox.value = randomNumber;
+      // 创建一个新的事件
+  var event = new Event('input', {
+    bubbles: true,
+    cancelable: true,
+  });
+
+  // 触发事件
+  inputBox.dispatchEvent(event);
 });
 
 // 获取具有类名为 "el-select" 的所有 select 元素
